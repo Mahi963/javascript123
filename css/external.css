@@ -1,9 +1,0 @@
-h3,h6{
-    background-color: blue;
-}
-/* The above line is EXTERNAL CSS or STYLE */
-h3,header{
-    background-color: aqua;
-
-}
-/* The above line is overriding the first tag or First line */
