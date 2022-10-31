@@ -1,8 +1,11 @@
 <html>
-    <head></head>
+    <head>
+        <title>Form</title>
+        <script type></script>
+    </head>
     <body>
         <h1>Registration Form</h1>
-        <form onsubmit="return validate()">
+        <form onsubmit="return validate()" id="forminput">
             <label for="">First Name</label>
             <input type="text" id="firstname"  /> <br />
             <span id="message1" style="color: red;"> </span> <br />
@@ -25,7 +28,13 @@
         </form>
     </body>
     <script>
+        let form=document.getElementById("forminput")
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault()
+            validate()
+        })
         function validate() {
+
             let firstname = document.getElementById("firstname").value;
             let lastname = document.getElementById("lastname").value;
             let mobile = document.getElementById("mobile").value;
@@ -61,7 +70,17 @@
                 document.getElementById("message3").innerHTML='Please fill Min 10 char'
                 return false
             }
+            if( mobile.length>10){
+                document.getElementById("message3").innerHTML='Please fill max 10 char'
+                return false
+            }
+            if(firstname!="" && lastname!="" && email!="" &&mobile!=""){
+                console.log({
+                    "first:":firstname
+                })
+            }
     
         }
+        
     </script>
     </html>
